@@ -1,0 +1,145 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CleverBot | Chat Assistant</title>
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='style.css') }}"
+    >
+</head>
+
+<body>
+    <main class="app-layout">
+
+        <aside id="sidebar" class="sidebar">
+            <div class="sidebar-brand">
+                <div class="brand-icon">🤖</div>
+                <span>CleverBot</span>
+
+                <button
+                    id="close-sidebar"
+                    class="mobile-close"
+                    type="button"
+                    aria-label="Close sidebar"
+                >×</button>
+            </div>
+
+            <button id="new-chat-btn" class="new-chat" type="button">
+                <span>＋</span> New chat
+            </button>
+
+            <p class="sidebar-label">CHAT</p>
+
+            <div class="history-item active">
+                <span>▤</span>
+                <span>Current conversation</span>
+            </div>
+
+            <div class="sidebar-bottom">
+                <button id="theme-btn" class="sidebar-action" type="button">
+                    <span id="theme-icon">☀️</span>
+                    <span id="theme-label">Light mode</span>
+                </button>
+
+                <div class="profile">
+                    <div class="profile-avatar">C</div>
+                    <div>
+                        <strong>CleverBot</strong>
+                        <small>NLTK Assistant</small>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <div id="sidebar-overlay" class="sidebar-overlay"></div>
+
+        <section class="main-panel">
+            <header class="chat-header">
+                <button
+                    id="menu-btn"
+                    class="icon-button menu-button"
+                    type="button"
+                    aria-label="Open sidebar"
+                >☰</button>
+
+                <div class="header-avatar">🤖</div>
+
+                <div class="header-info">
+                    <h1>CleverBot</h1>
+                    <p><span class="online-dot"></span> Online</p>
+                </div>
+
+                <button
+                    id="clear-btn"
+                    class="icon-button"
+                    type="button"
+                    title="Clear conversation"
+                    aria-label="Clear conversation"
+                >↻</button>
+            </header>
+
+            <section
+                id="chat-box"
+                class="chat-box"
+                aria-label="Chat messages"
+                aria-live="polite"
+            >
+                <div class="welcome">
+                    <div class="welcome-icon">✨</div>
+                    <h2>How can I help you?</h2>
+                    <p>Ask a question to start chatting with CleverBot.</p>
+                </div>
+
+                <div class="message bot-message">
+                    <div class="avatar message-avatar">🤖</div>
+                    <div class="message-body">
+                        <div class="message-content">
+                            Hi! I'm CleverBot. How can I help you today?
+                        </div>
+                        <time class="message-time"></time>
+                    </div>
+                </div>
+            </section>
+
+            <section class="suggestions">
+                <button class="suggestion" data-message="Hello" type="button">
+                    👋 Say hello
+                </button>
+                <button
+                    class="suggestion"
+                    data-message="What is your name?"
+                    type="button"
+                >🤖 Your name</button>
+                <button class="suggestion" data-message="Help me" type="button">
+                    💡 Help
+                </button>
+            </section>
+
+            <form id="chat-form" class="input-area">
+                <input
+                    id="message-input"
+                    type="text"
+                    placeholder="Message CleverBot..."
+                    autocomplete="off"
+                    maxlength="2000"
+                    aria-label="Type your message"
+                    required
+                >
+                <button id="send-btn" type="submit">
+                    <span>Send</span> <span aria-hidden="true">➤</span>
+                </button>
+            </form>
+
+            <footer class="chat-footer">
+                Powered by Python · Flask · NLTK
+            </footer>
+        </section>
+    </main>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
