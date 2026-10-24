@@ -2,6 +2,14 @@
 
 A rule-based chatbot built using Python, Flask, and Natural Language Processing (NLP) concepts. It provides an interactive web interface where users can send messages and receive automated responses.
 
+
+
+## 🌐 Live Demo
+
+**Try the chatbot here:** [CleverBot — ](https://chatbot-prj-k512.onrender.com/)
+
+The application is deployed using Render. Open the link above to interact with the chatbot online.
+
 ## 🚀 Features
 
 - Interactive chatbot web interface
